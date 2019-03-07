@@ -1,14 +1,31 @@
 import React, {Component} from 'react';
+import Shape from "./Shape.js";
+import './App.css';
 
 class Selector extends Component {
-  render () {
-    return (
+  constructor () {
+    super();
+    this.state = {
+      selectedShape: "square"
+    }
+  }
+
+  selectShape = (shapeName) => {
+    this.setState({
+      selectedShape: shapeName
+    })
+  }
+
+  render(){
+    return(
       <div className="container">
         <div className="navbar">
-          <div>Selected: <span>What goes here?!?</span></div>
+        <div>Selected: <span> {this.state.selectedShape}</span></div>
         </div>
         <div className="shape-list">
-        Add the Shape Components here!!
+        <Shape shape="square" selectShape={this.selectShape} />
+        <Shape shape="circle" selectShape={this.selectShape}/>
+        <Shape shape="triangle" selectShape={this.selectShape} />
         </div>
       </div>
     )
