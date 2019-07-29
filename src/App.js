@@ -18,7 +18,7 @@ class Selector extends Component {
     return (
       <div className="container">
         <div className="navbar">
-          <div>Selected:<span>{this.state.selectedshape}</span></div>
+          <div>Selected:<span>{this.state.selectedShape}</span></div>
         </div>
         <div className="shape-list">
           <Shape shape="square" selectShape={this.selectShape} />
